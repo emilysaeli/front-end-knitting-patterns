@@ -4,10 +4,19 @@ import Chart from "./components/Chart";
 import Legend from "./components/Legend";
 
 const App = () => {
+  // send pattern form input to back-end
+  const submitPattern = (patternForm) => {
+    console.log("submitPattern called");
+    console.log(patternForm);
+  };
+
   return (
     <div className="App">
+      <header className="header">
+        <h1>Knitting Patterns</h1>
+      </header>
       <section className="form">
-        <Form></Form>
+        <Form submitPattern={submitPattern}></Form>
       </section>
       <section className="legend">
         <Legend></Legend>
