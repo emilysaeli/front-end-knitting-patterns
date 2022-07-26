@@ -1,0 +1,22 @@
+.chart {
+    width: 80%;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-row {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.stitch {
+    display: flex;
+    width: 2em;
+    height: 2em;
+    border: 1px black solid;
+    justify-content: center;
+    align-items: center;
+}
