@@ -1,11 +1,17 @@
 .chart {
     width: 80%;
+<<<<<<< HEAD
     margin: 2em auto;
+=======
+    margin: auto;
+    /* border: 1px solid black; */
+>>>>>>> 1bd323600f7ec6ab72cd95c076a12f79f0e08382
     display: flex;
     flex-direction: column;
 }
 
 .chart-row {
+<<<<<<< HEAD
     display: flex;
     margin: auto;
     align-items: center;
@@ -19,4 +25,15 @@
     border: 1px black solid;
     justify-content: center;
     align-items: center;
+=======
+    margin: auto;
+    /* border: 1px solid red; */
+    display: flex;
+}
+
+.stitch {
+    border: 1px solid black;
+    height: 1.5em;
+    width: 1.5em;
+>>>>>>> 1bd323600f7ec6ab72cd95c076a12f79f0e08382
 }
