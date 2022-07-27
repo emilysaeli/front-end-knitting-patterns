@@ -2,6 +2,7 @@ import "./App.css";
 import Form from "./components/Form";
 import Chart from "./components/Chart";
 import Legend from "./components/Legend";
+import data from "./services/mockData.json";
 
 const App = () => {
   // send pattern form input to back-end
@@ -21,8 +22,8 @@ const App = () => {
       <section className="legend">
         <Legend></Legend>
       </section>
-      <section className="chart">
-        <Chart></Chart>
+      <section>
+        <Chart data={data}></Chart>
       </section>
     </div>
   );

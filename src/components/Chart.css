@@ -1,0 +1,19 @@
+.chart {
+    width: 80%;
+    margin: auto;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-row {
+    margin: auto;
+    /* border: 1px solid red; */
+    display: flex;
+}
+
+.stitch {
+    border: 1px solid black;
+    height: 1.5em;
+    width: 1.5em;
+}
