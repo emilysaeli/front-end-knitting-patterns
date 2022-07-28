@@ -2,15 +2,19 @@ import React from "react";
 import "./Chart.css";
 
 const Chart = (props) => {
-  const toLetter = (num) => {
-    // 1-based i.e 1 is A, 27 is AA
-    let mod = num % 26;
-    let div = (num / 26) | 0;
-    let out = mod ? String.fromCharCode(64 + mod) : (div--, "Z");
-    return div ? toLetter(div) + out : out;
-  };
-
   const createHeaderArray = (colNum) => {
+    const toLetter = (num) => {
+      // 1-based i.e 1 is A, 26 is Z, 27 is AA
+      let resultArray = [];
+      while (num > 0) {
+        const mod = num % 26;
+        num = Math.trunc((num - 1) / 26);
+        const char = mod ? String.fromCharCode(64 + mod) : "Z";
+        resultArray.push(char);
+      }
+      return resultArray.reverse().join("");
+    };
+
     const headerArray = [" "];
     for (let i = 1; i <= colNum; i++) {
       headerArray.push(toLetter(i));
@@ -25,31 +29,35 @@ const Chart = (props) => {
     chartData.push(headerArray);
     for (const [rowIndex, row] of data.entries()) {
       let newRow;
-      if (row[0].stitch_type === "CO") {
+      if (row[0].stitch === "CO") {
         newRow = ["CO"];
-      } else if (row[0].stitch_type === "BO") {
+      } else if (row[0].stitch === "BO") {
         newRow = ["BO"];
       } else {
-        newRow = [rowIndex + 1];
+        newRow = [rowIndex];
       }
 
       newRow.push(...row);
       chartData.push(newRow);
     }
-
-    console.log(chartData);
     return chartData;
   };
 
   const chartJSX = (data) =>
     data.map((row) => {
-      const chartRow = row.map((element) =>
-        element.stitch_type ? (
-          <div className="grid stitch">{element.stitch_type}</div>
-        ) : (
-          <div className="grid table-header">{element}</div>
-        )
-      );
+      const chartRow = row.map((element) => {
+        if (element.stitch) {
+          if (element.stitch === "K") {
+            return <div className="grid stitch knit"> {element.stitch}</div>;
+          } else if (element.stitch === "P") {
+            return <div className="grid stitch purl"> {element.stitch}</div>;
+          } else {
+            return <div className="grid stitch"> {element.stitch}</div>;
+          }
+        } else {
+          return <div className="grid index">{element}</div>;
+        }
+      });
       return <div className="chart-row">{chartRow}</div>;
     });
 

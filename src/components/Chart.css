@@ -11,10 +11,20 @@
 }
 
 .grid {
+    height: 1.8em;
+    width: 1.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
-    height: 1.5em;
-    width: 1.5em;
 }
-.grid.table-header {
-    background-color: beige;
+
+.grid.index {
+    background-color: black;
+    color: white;
+    border: 1px solid grey;
+}
+
+.grid.stitch.purl {
+    background-color: yellowgreen;
 }
