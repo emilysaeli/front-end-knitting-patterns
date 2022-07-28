@@ -29,9 +29,9 @@ const Chart = (props) => {
     chartData.push(headerArray);
     for (const [rowIndex, row] of data.entries()) {
       let newRow;
-      if (row[0].stitch_type === "CO") {
+      if (row[0].stitch === "CO") {
         newRow = ["CO"];
-      } else if (row[0].stitch_type === "BO") {
+      } else if (row[0].stitch === "BO") {
         newRow = ["BO"];
       } else {
         newRow = [rowIndex];
@@ -44,14 +44,20 @@ const Chart = (props) => {
   };
 
   const chartJSX = (data) =>
-    data.map((row, rowIndex) => {
-      const chartRow = row.map((element) =>
-        element.stitch_type ? (
-          <div className="grid stitch"> {element.stitch_type}</div>
-        ) : (
-          <div className="grid index">{element}</div>
-        )
-      );
+    data.map((row) => {
+      const chartRow = row.map((element) => {
+        if (element.stitch) {
+          if (element.stitch === "K") {
+            return <div className="grid stitch knit"> {element.stitch}</div>;
+          } else if (element.stitch === "P") {
+            return <div className="grid stitch purl"> {element.stitch}</div>;
+          } else {
+            return <div className="grid stitch"> {element.stitch}</div>;
+          }
+        } else {
+          return <div className="grid index">{element}</div>;
+        }
+      });
       return <div className="chart-row">{chartRow}</div>;
     });
 
