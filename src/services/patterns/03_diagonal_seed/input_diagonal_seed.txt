@@ -1,0 +1,12 @@
+Source: https://www.studioknitsf.com/knit-stitch-pattern-book/#:~:text=EASY%2DTO%2DFOLLOW%20KNITTING%20INSTRUCTIONS
+
+CAST ON
+Multiple of 6 
+
+IN THE ROUND
+Row 1: * P1, K5 * 
+Row 2: * K1, P1 , K4*
+Row 3: * K2, P1 , K3 *
+Row 4: * K3, P1 , K2 *
+Row 5: * K4, P1 , K1 *
+Row 6: * K5, P1 *
