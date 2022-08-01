@@ -1,0 +1,23 @@
+.legend-container {
+    text-align: left;
+    border: 1px solid red;
+}
+
+.legend-entry{
+    display:flex;
+}
+
+.legend-title {
+    font-weight: bold;
+    background-color: lightblue;
+}
+
+.legend-label {
+    font-size: 1em;
+}
+
+.legend-color {
+    background-color:chartreuse;
+    width: 20px;
+    height: 20px;
+}

@@ -4,13 +4,13 @@ import Chart from "./components/Chart";
 import Legend from "./components/Legend";
 // import data from "./services/mockData.json";
 // import data from "./services/patterns/01_flag_stitch/output_flag_stitch.json";
-import data from "./services/patterns/02_reverse_ridge/output_reverse_ridge.json";
+// import data from "./services/patterns/02_reverse_ridge/output_reverse_ridge.json";
 // import data from "./services/patterns/03_diagonal_seed/output_diagonal_seed.json";
-// import data from "./services/patterns/04_tile_squares/output_tile_squares.json";
+import data from "./services/patterns/04_tile_squares/output_tile_squares.json";
 import { useState } from "react";
 import axios from "axios";
-
 import React from "react";
+
 const App = () => {
   const URL = "https://pattern-handler-test-api.herokuapp.com";
   const [chartData, setChartData] = useState([]);
@@ -18,7 +18,6 @@ const App = () => {
   // send pattern form input to back-end
   const submitPattern = (patternForm) => {
     console.log("submitPattern called");
-
     axios
       .get(`${URL}`)
       .then((response) => {
