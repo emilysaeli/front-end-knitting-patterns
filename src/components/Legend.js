@@ -41,22 +41,15 @@ const Legend = (props) => {
         }
       }
     }
-    // console.log(uniqueStitches);
     return uniqueStitches;
   };
 
   const legendComponents = () => {
-    // uniqueStitches = ["CO", "K", "BO", "P"]
     const uniqueStitches = getUniqueStitches(props.data);
-    let counter = 0;
     const stitchItems = uniqueStitches.map((stitch) => {
-      // console.log(uniqueStitches);
       let item = stitchDictionary[stitch];
-      console.log(item.name);
-      let keyName = item.name + String(counter);
-      counter++;
       return (
-        <li key={keyName}>
+        <li key={item.name}>
           <div className="legend-entry">
             <div className="legend-title">
               <div className="legend-color"></div>

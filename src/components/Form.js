@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 
 const Form = (props) => {
-  const [patternForm, setPatternForm] = useState();
+  // formatted as a JSON object
+  // const [patternForm, setPatternForm] = useState({ inputPattern: "" });
+  const [patternForm, setPatternForm] = useState("");
 
   const onFormChange = (event) => {
     const inputValue = event.target.value;
+    // setPatternForm({ inputPattern: inputValue });
     setPatternForm(inputValue);
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
     props.submitPattern(patternForm);
-
-    setPatternForm();
+    console.log(patternForm);
   };
   return (
     <div>

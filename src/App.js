@@ -12,14 +12,15 @@ import axios from "axios";
 import React from "react";
 
 const App = () => {
-  const URL = "https://pattern-handler-test-api.herokuapp.com";
-  const [chartData, setChartData] = useState([]);
+  const URL = "http://pattern-handler-test-api.herokuapp.com";
+  const [chartData, setChartData] = useState(["default chartData"]);
 
   // send pattern form input to back-end
   const submitPattern = (patternForm) => {
     console.log("submitPattern called");
+    console.log(patternForm);
     axios
-      .get(`${URL}`)
+      .post(`${URL}`, patternForm)
       .then((response) => {
         setChartData(response.data);
       })
@@ -35,6 +36,7 @@ const App = () => {
       </header>
       <section className="form">
         <Form submitPattern={submitPattern}></Form>
+        <p>{chartData}</p>
       </section>
       <section className="legend">
         <Legend data={data}></Legend>
