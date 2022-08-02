@@ -3,6 +3,7 @@
     margin: auto;
     display: flex;
     flex-direction: column;
+    
 }
 
 .chart-row {
@@ -27,4 +28,8 @@
 
 .grid.stitch.purl {
     background-color: yellowgreen;
+}
+
+#save-btn {
+    margin: 1em;
 }

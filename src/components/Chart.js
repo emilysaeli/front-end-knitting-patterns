@@ -1,26 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Chart.css";
+import { createHeaderArray } from "../services/data_validation";
+import { handleDownloadImage } from "../services/download_image";
 
 const Chart = (props) => {
-  const createHeaderArray = (colNum) => {
-    const toLetter = (num) => {
-      // 1-based i.e 1 is A, 26 is Z, 27 is AA
-      let resultArray = [];
-      while (num > 0) {
-        const mod = num % 26;
-        num = Math.trunc((num - 1) / 26);
-        const char = mod ? String.fromCharCode(64 + mod) : "Z";
-        resultArray.push(char);
-      }
-      return resultArray.reverse().join("");
-    };
-
-    const headerArray = [" "];
-    for (let i = 1; i <= colNum; i++) {
-      headerArray.push(toLetter(i));
-    }
-    return headerArray;
-  };
+  const printRef = useRef();
 
   const generateChartData = (data) => {
     const colNum = data[0].length;
@@ -66,7 +50,12 @@ const Chart = (props) => {
   return (
     <div>
       <h2>Chart</h2>
-      <div className="chart">{chartJSX(chartData)}</div>
+      <div className="chart" ref={printRef}>
+        {chartJSX(chartData)}
+      </div>
+      <button onClick={() => handleDownloadImage(printRef)} id="save-btn">
+        Save Image
+      </button>
     </div>
   );
 };
