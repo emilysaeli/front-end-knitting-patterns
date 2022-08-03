@@ -49,21 +49,19 @@ const Legend = (props) => {
     const stitchItems = uniqueStitches.map((stitch) => {
       let item = stitchDictionary[stitch];
       return (
-        <li key={item.name}>
+        <div key={item.name}>
           <div className="legend-entry">
-            <div className="legend-title">
-              <div className="legend-color"></div>
-              {stitch}: {item.name}
-            </div>
+            <div className="legend-color">{stitch}</div>
+            <div className="legend-title">{item.name}</div>
           </div>
-          <div>
+          {/* <div>
             <h2 className="legend-label">Description:</h2> {item.description}
           </div>
           <div>
             <h2 className="legend-label">Resources: </h2>
             {item.resources}
-          </div>
-        </li>
+          </div> */}
+        </div>
       );
     });
     return stitchItems;
@@ -79,5 +77,3 @@ const Legend = (props) => {
 };
 
 export default Legend;
-
-// - Cast On {stitchDictionary[stitch].name}

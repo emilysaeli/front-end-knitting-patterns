@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  font-family: Open Sans;
+  background-color:lightblue;
+}
+
 .App {
   text-align: center;
 }
@@ -8,5 +15,5 @@
   align-items: center;
   align-self: center;
   justify-self: center;
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
 }
