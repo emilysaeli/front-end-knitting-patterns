@@ -21,11 +21,42 @@
     font-size: 1em;
 }
 
-.legend-color {
-    background-color:chartreuse;
+.legend-key {
+    /* background-color:chartreuse; */
     width: 25px;
     height: 25px;
     margin: 5px;
     text-align: center;
     align-self: center;
+}
+.key-container {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    text-align: center;
+    align-self: center;
+}
+
+.default-stitch {
+    background-color: white;
+    border: 1px solid black;
+}
+.knit-stitch {
+    background-color: orange;
+}
+
+.cast-on {
+    background-color: lightcoral
+}
+
+.purl-stitch {
+    background-color: yellowgreen;
+}
+
+.slip-stitch {
+    background-color: lightsalmon;
+}
+
+.bind-off {
+    background-color: lightgreen;
 }

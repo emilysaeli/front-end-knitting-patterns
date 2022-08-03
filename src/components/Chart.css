@@ -33,3 +33,24 @@
 #save-btn {
     margin: 1em;
 }
+
+
+.knit-stitch {
+    background-color: orange;
+}
+
+.cast-on {
+    background-color: lightcoral
+}
+
+.purl-stitch {
+    background-color: yellowgreen;
+}
+
+.slip-stitch {
+    background-color: lightsalmon;
+}
+
+.bind-off {
+    background-color: lightgreen;
+}

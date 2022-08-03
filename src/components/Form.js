@@ -1,9 +1,8 @@
 import React, { useState } from "react";
+import "./Form.css";
 
 const Form = (props) => {
-  // formatted patternForm as a JSON object
   const [patternForm, setPatternForm] = useState({ inputPattern: "" });
-  // const [patternForm, setPatternForm] = useState("");
 
   const onFormChange = (event) => {
     const inputValue = event.target.value;
@@ -28,6 +27,9 @@ const Form = (props) => {
               name="pattern-form"
               onChange={onFormChange}
               className="pattern-form"
+              placeholder="Input your knitting pattern here!"
+              rows="10"
+              cols="50"
             />
           </div>
           <div>
