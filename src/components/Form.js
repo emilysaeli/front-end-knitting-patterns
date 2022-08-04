@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Form.css";
 
 const Form = (props) => {
   // const [patternForm, setPatternForm] = useState({ inputPattern: "" });
   const [patternForm, setPatternForm] = useState("");
+  const [prevPatternForm, setPrevPatternForm] = useState("");
 
   const onFormChange = (event) => {
     const inputValue = event.target.value;
@@ -14,6 +15,7 @@ const Form = (props) => {
   const onSubmit = (event) => {
     event.preventDefault();
     props.submitPattern({ inputPattern: patternForm });
+    setPrevPatternForm(patternForm);
     setPatternForm("");
   };
   return (
@@ -44,6 +46,8 @@ const Form = (props) => {
           </div>
         </div>
       </form>
+      <p>Your pattern:</p>
+      <p>{prevPatternForm}</p>
     </div>
   );
 };

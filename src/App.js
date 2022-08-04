@@ -91,7 +91,6 @@ const App = () => {
       </header>
       <section className="form">
         <Form submitPattern={submitPattern}></Form>
-        {chartData.length > 0 && <p>Your pattern has been received!</p>}
       </section>
       <section className="legend">
         {chartData.length > 0 && (

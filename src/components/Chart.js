@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import "./Chart.css";
 import { createHeaderArray } from "../services/data_validation";
 import { handleDownloadImage } from "../services/download_image";
