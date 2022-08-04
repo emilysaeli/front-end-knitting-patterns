@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "./Form.css";
 
 const Form = (props) => {
-  const [patternForm, setPatternForm] = useState({ inputPattern: "" });
+  // const [patternForm, setPatternForm] = useState({ inputPattern: "" });
+  const [patternForm, setPatternForm] = useState("");
 
   const onFormChange = (event) => {
     const inputValue = event.target.value;
-    setPatternForm({ inputPattern: inputValue });
+    // setPatternForm({ inputPattern: inputValue });
     setPatternForm(inputValue);
   };
 
@@ -26,10 +27,12 @@ const Form = (props) => {
               type="text"
               name="pattern-form"
               onChange={onFormChange}
+              value={patternForm}
               className="pattern-form"
               placeholder="Input your knitting pattern here!"
               rows="10"
               cols="50"
+              required
             />
           </div>
           <div>
