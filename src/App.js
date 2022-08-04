@@ -67,8 +67,8 @@ const App = () => {
       .post(`${URL}`, patternForm)
       .then((response) => {
         setChartData(response.data);
-        // setUniqueStitches(getUniqueStitches(response.data));
-        setUniqueStitches(getUniqueStitches(data));
+        setUniqueStitches(getUniqueStitches(response.data));
+        // setUniqueStitches(getUniqueStitches(data));
         console.log(response.data);
       })
       .catch((error) => {
@@ -77,12 +77,14 @@ const App = () => {
   };
   const getUniqueStitches = (data) => {
     let uniqueStitches = [];
-    for (const row of data) {
-      for (const element of row) {
-        if (uniqueStitches.includes(element.stitch) === false) {
-          uniqueStitches.push(element.stitch);
-        }
+    // Loops through only one row for demo purposes
+    // for (const row of data) {
+    //   for (const element of row) {
+    for (const element of data) {
+      if (uniqueStitches.includes(element.stitch) === false) {
+        uniqueStitches.push(element.stitch);
       }
+      // }
     }
     setUniqueStitches(uniqueStitches);
     return uniqueStitches;
@@ -107,11 +109,11 @@ const App = () => {
         ></Legend>
       </section>
       {
-        // button for testing purposes, remove when back-end response complete
+        // button for testing purposes
       }
-      <div>
+      {/* <div>
         <button onClick={() => getUniqueStitches(data)}>Generate legend</button>
-      </div>
+      </div> */}
       <section>
         <Chart data={data} stitchDictionary={stitchDictionary}></Chart>
       </section>
