@@ -2,3 +2,9 @@ textarea {
     font-family: 'Gill Sans';
     padding: 10px;
 }
+
+.user-submitted-input {
+    border: none;
+    background-color: transparent;
+    text-align: center;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import "./Form.css";
 
 const Form = (props) => {
@@ -18,6 +18,7 @@ const Form = (props) => {
     setPrevPatternForm(patternForm);
     setPatternForm("");
   };
+  console.log(prevPatternForm);
   return (
     <div>
       <h2>Form</h2>
@@ -47,7 +48,9 @@ const Form = (props) => {
         </div>
       </form>
       <p>Your pattern:</p>
-      <p>{prevPatternForm}</p>
+      <textarea className="user-submitted-input" rows="10" cols="50">
+        {prevPatternForm}
+      </textarea>
     </div>
   );
 };

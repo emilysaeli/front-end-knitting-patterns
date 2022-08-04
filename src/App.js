@@ -62,23 +62,21 @@ const App = () => {
       .then((response) => {
         setChartData(response.data);
         setUniqueStitches(getUniqueStitches(response.data));
-        // setUniqueStitches(getUniqueStitches(data));
         console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
   const getUniqueStitches = (data) => {
     let uniqueStitches = [];
-    // Loops through only one row for demo purposes
-    // for (const row of data) {
-    //   for (const element of row) {
-    for (const element of data) {
-      if (uniqueStitches.includes(element.stitch) === false) {
-        uniqueStitches.push(element.stitch);
+    for (const row of data) {
+      for (const element of row) {
+        if (uniqueStitches.includes(element.stitch) === false) {
+          uniqueStitches.push(element.stitch);
+        }
       }
-      // }
     }
     setUniqueStitches(uniqueStitches);
     return uniqueStitches;
@@ -110,7 +108,7 @@ const App = () => {
       </div> */}
       <section>
         {chartData.length > 0 && (
-          <Chart data={[chartData]} stitchDictionary={stitchDictionary} />
+          <Chart data={chartData} stitchDictionary={stitchDictionary} />
         )}
       </section>
     </div>

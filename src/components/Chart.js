@@ -62,8 +62,7 @@ const Chart = (props) => {
                 data-tip
                 data-for="purl-stitch-tip"
               >
-                {" "}
-                {element.stitch}{" "}
+                {element.stitch}
                 <ReactTooltip id="purl-stitch-tip" place="top" effect="solid">
                   <h2>{props.stitchDictionary[element.stitch].name}</h2>
                   <div className="tooltip-description">
