@@ -18,7 +18,17 @@ const Form = (props) => {
     setPrevPatternForm(patternForm);
     setPatternForm("");
   };
-  console.log(prevPatternForm);
+
+  const generateSubmittedPattern = (pattern) => {
+    const rowsArray = pattern.split(/\r\n|\r|\n/);
+    return (
+      <div>
+        {rowsArray.map((row) => (
+          <div>{row}</div>
+        ))}
+      </div>
+    );
+  };
   return (
     <div>
       <h2>Form</h2>
@@ -47,10 +57,10 @@ const Form = (props) => {
           </div>
         </div>
       </form>
-      <p>Your pattern:</p>
-      <textarea className="user-submitted-input" rows="10" cols="50">
-        {prevPatternForm}
-      </textarea>
+      <div class="submitted-pattern">
+        <p>Your pattern:</p>
+        {generateSubmittedPattern(prevPatternForm)}
+      </div>
     </div>
   );
 };
