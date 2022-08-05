@@ -32,7 +32,7 @@ const Legend = (props) => {
     <div>
       <h2>Legend</h2>
       <div className="legend-container">
-        <ul>{generateLegend()}</ul>
+        <div>{generateLegend()}</div>
       </div>
     </div>
   );

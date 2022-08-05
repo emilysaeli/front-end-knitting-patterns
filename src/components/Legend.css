@@ -5,7 +5,7 @@
     opacity: 0.7;
     border-radius: 15px;
     box-shadow: 4px 4px 10px gray;
-
+    padding: 5px;
 }
 
 .legend-entry{
@@ -22,7 +22,6 @@
 }
 
 .legend-key {
-    /* background-color:chartreuse; */
     width: 25px;
     height: 25px;
     margin: 5px;
