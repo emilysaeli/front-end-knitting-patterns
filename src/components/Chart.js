@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
+import ReactTooltip from "react-tooltip";
 import "./Chart.css";
 import { createHeaderArray } from "../services/data_validation";
 import { handleDownloadImage } from "../services/download_image";
-import ReactTooltip from "react-tooltip";
+import { stitchDictionary } from "../services/stitchDictionary";
 
 const Chart = (props) => {
   const printRef = useRef();
@@ -32,55 +33,28 @@ const Chart = (props) => {
     data.map((row) => {
       const chartRow = row.map((element) => {
         if (element.stitch) {
-          if (element.stitch === "K") {
-            return (
-              <div
-                className="grid stitch knit"
-                data-tip
-                data-for="knit-stitch-tip"
-              >
-                {element.stitch}
-                <ReactTooltip id="knit-stitch-tip" place="top" effect="solid">
-                  <h2>{props.stitchDictionary[element.stitch].name}</h2>
-                  <div className="tooltip-description">
-                    {props.stitchDictionary[element.stitch].description}
-                  </div>
-                  <div className="tooltip-resources"></div>
-                  Resources:
-                  <div>
-                    <a href={props.stitchDictionary[element.stitch].resources}>
-                      {props.stitchDictionary[element.stitch].resources}
-                    </a>
-                  </div>
-                </ReactTooltip>
-              </div>
-            );
-          } else if (element.stitch === "P") {
-            return (
-              <div
-                className="grid stitch purl"
-                data-tip
-                data-for="purl-stitch-tip"
-              >
-                {element.stitch}
-                <ReactTooltip id="purl-stitch-tip" place="top" effect="solid">
-                  <h2>{props.stitchDictionary[element.stitch].name}</h2>
-                  <div className="tooltip-description">
-                    {props.stitchDictionary[element.stitch].description}
-                  </div>
-                  <div className="tooltip-resources"></div>
-                  Resources:
-                  <div>
-                    <a href={props.stitchDictionary[element.stitch].resources}>
-                      {props.stitchDictionary[element.stitch].resources}
-                    </a>
-                  </div>
-                </ReactTooltip>
-              </div>
-            );
-          } else {
-            return <div className="grid stitch"> {element.stitch}</div>;
-          }
+          return (
+            <div
+              className={`grid ${stitchDictionary[element.stitch].css}`}
+              data-tip
+              data-for="knit-stitch-tip"
+            >
+              {element.stitch}
+              <ReactTooltip id="knit-stitch-tip" place="top" effect="solid">
+                <h2>{props.stitchDictionary[element.stitch].name}</h2>
+                <div className="tooltip-description">
+                  {props.stitchDictionary[element.stitch].description}
+                </div>
+                <div className="tooltip-resources"></div>
+                Resources:
+                <div>
+                  <a href={props.stitchDictionary[element.stitch].resources}>
+                    {props.stitchDictionary[element.stitch].resources}
+                  </a>
+                </div>
+              </ReactTooltip>
+            </div>
+          );
         } else {
           return <div className="grid index">{element}</div>;
         }

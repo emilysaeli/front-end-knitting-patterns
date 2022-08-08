@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Form.css";
 
 const Form = (props) => {
-  const [patternForm, setPatternForm] = useState({ inputPattern: "" });
+  const [patternForm, setPatternForm] = useState("");
   const [prevPatternForm, setPrevPatternForm] = useState("");
 
   const onFormChange = (event) => {
@@ -56,7 +56,7 @@ const Form = (props) => {
           </div>
         </div>
       </form>
-      <div class="submitted-pattern">
+      <div className="submitted-pattern">
         <p>Your pattern:</p>
         {generateSubmittedPattern(prevPatternForm)}
       </div>

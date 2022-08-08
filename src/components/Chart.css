@@ -26,33 +26,9 @@
     border: 1px solid grey;
 }
 
-.grid.stitch.purl {
-    background-color: yellowgreen;
-}
 
 #save-btn {
     margin: 1em;
-}
-
-
-.knit-stitch {
-    background-color: orange;
-}
-
-.cast-on {
-    background-color: lightcoral
-}
-
-.purl-stitch {
-    background-color: yellowgreen;
-}
-
-.slip-stitch {
-    background-color: lightsalmon;
-}
-
-.bind-off {
-    background-color: lightgreen;
 }
 
 .tooltip-name {
