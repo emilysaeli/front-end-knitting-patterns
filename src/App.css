@@ -2,7 +2,9 @@
 
 body {
   font-family: Open Sans;
-  background-color:lightblue;
+  /* background-color:lightblue; */
+  background-image: url("/src/assets/pexels-vlada-karpovich-5603005.jpg");
+  background-size: cover;
 }
 
 .App {
