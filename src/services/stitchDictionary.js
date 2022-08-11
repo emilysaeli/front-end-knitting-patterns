@@ -37,8 +37,9 @@ export const stitchDictionary = {
   },
   BO: {
     name: "Bind Off",
-    description: "",
-    resources: "",
+    description:
+      "The basic bind off is the most commonly used method to finishing off your knitting. As you work each stitch, you will pass the previous stitch over it and off the needles.",
+    resources: "https://youtu.be/VSwjIUiQZlM",
     symbol: "BO",
     css: "bind-off",
   },

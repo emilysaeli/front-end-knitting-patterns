@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import ReactTooltip from "react-tooltip";
 import "./Chart.css";
 import { createHeaderArray } from "../services/data_validation";
@@ -31,6 +31,10 @@ const Chart = (props) => {
     return chartData;
   };
 
+  useEffect(() => {
+    ReactTooltip.rebuild();
+  });
+
   const chartJSX = (data) =>
     // this functon generates the JSX components
     // from a 2D chart data array
@@ -40,23 +44,22 @@ const Chart = (props) => {
           return (
             <div
               className={`grid ${stitchDictionary[element.stitch].css}`}
-              data-tip
-              data-for="knit-stitch-tip"
+              data-tip={`${stitchDictionary[element.stitch].name}: ${
+                stitchDictionary[element.stitch].description
+              } `}
+              data-for="stitch-tooltip"
             >
               {element.stitch}
-              <ReactTooltip id="knit-stitch-tip" place="top" effect="solid">
-                <h2>{props.stitchDictionary[element.stitch].name}</h2>
-                <div className="tooltip-description">
-                  {props.stitchDictionary[element.stitch].description}
-                </div>
-                <div className="tooltip-resources"></div>
-                Resources:
-                <div>
-                  <a href={props.stitchDictionary[element.stitch].resources}>
-                    {props.stitchDictionary[element.stitch].resources}
-                  </a>
-                </div>
-              </ReactTooltip>
+              <ReactTooltip
+                id="stitch-tooltip"
+                place="top"
+                effect="solid"
+                getContent={(dataTip) => (
+                  <div>
+                    <p>{dataTip}</p>
+                  </div>
+                )}
+              ></ReactTooltip>
             </div>
           );
         } else {
