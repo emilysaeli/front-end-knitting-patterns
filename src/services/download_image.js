@@ -1,6 +1,8 @@
 import html2canvas from "html2canvas";
 
 export const handleDownloadImage = async (printRef) => {
+  // Reference: https://blog.logrocket.com/export-react-components-as-images-html2canvas/
+  // This function exports React components as an image file
   const element = printRef.current;
   const canvas = await html2canvas(element);
 

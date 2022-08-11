@@ -19,6 +19,8 @@ const Form = (props) => {
   };
 
   const generateSubmittedPattern = (pattern) => {
+    // This function splits up the submitted input by rows
+    // and generates JSX
     const rowsArray = pattern.split(/\r\n|\r|\n/);
     return (
       <div>

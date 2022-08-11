@@ -6,9 +6,11 @@ import { handleDownloadImage } from "../services/download_image";
 import { stitchDictionary } from "../services/stitchDictionary";
 
 const Chart = (props) => {
-  const printRef = useRef();
+  const printRef = useRef(); // used in handleDownloadImage function
 
   const generateChartData = (data) => {
+    // This function generates a 2D array with row and column headers
+    // together with the stitch data received from back-end
     const colNum = data[0].length;
     const chartData = [];
     const headerArray = createHeaderArray(colNum);
@@ -30,6 +32,8 @@ const Chart = (props) => {
   };
 
   const chartJSX = (data) =>
+    // this functon generates the JSX components
+    // from a 2D chart data array
     data.map((row) => {
       const chartRow = row.map((element) => {
         if (element.stitch) {
