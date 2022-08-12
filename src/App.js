@@ -7,7 +7,7 @@ import Legend from "./components/Legend";
 import { stitchDictionary } from "./services/stitchDictionary.js";
 
 const App = () => {
-  const URL = "http://pattern-handler-test-api.herokuapp.com";
+  const URL = "https://pattern-handler-test-api.herokuapp.com";
   const [chartData, setChartData] = useState([]);
   const [uniqueStitches, setUniqueStitches] = useState([]);
 
