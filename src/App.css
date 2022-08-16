@@ -9,6 +9,11 @@ body {
 
 .App {
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.456);
+  width: auto;
+  margin: 300px;
+  padding: 75px;
+  ;
 }
 
 .legend {
@@ -18,4 +23,8 @@ body {
   align-self: center;
   justify-self: center;
   /* border: 1px solid orange; */
+}
+
+h1 {
+  color: rgb(79, 79, 79);
 }

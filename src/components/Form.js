@@ -35,7 +35,9 @@ const Form = (props) => {
       <h2>Form</h2>
       <form onSubmit={onSubmit}>
         <div className="input-container">
-          <label htmlFor="pattern-form">Knitting Pattern: </label>
+          <label hidden htmlFor="pattern-form">
+            Knitting Pattern:{" "}
+          </label>
           <div>
             <textarea
               type="text"

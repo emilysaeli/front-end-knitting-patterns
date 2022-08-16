@@ -42,7 +42,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="header">
-        <h1>Knitting Patterns</h1>
+        <h1>Knitting Patterns Made Easy</h1>
       </header>
       <section className="form">
         <Form submitPattern={submitPattern}></Form>
