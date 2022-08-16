@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from "react";
-import ReactTooltip from "react-tooltip";
+import React, { useRef } from "react";
 import "./Chart.css";
+import Tooltip from "./Tooltip";
 import { createHeaderArray } from "../services/data_validation";
 import { handleDownloadImage } from "../services/download_image";
 import { stitchDictionary } from "../services/stitchDictionary";
@@ -31,10 +31,6 @@ const Chart = (props) => {
     return chartData;
   };
 
-  useEffect(() => {
-    ReactTooltip.rebuild();
-  });
-
   const chartJSX = (data) =>
     // this functon generates the JSX components
     // from a 2D chart data array
@@ -42,24 +38,14 @@ const Chart = (props) => {
       const chartRow = row.map((element) => {
         if (element.stitch) {
           return (
-            <div
-              className={`grid ${stitchDictionary[element.stitch].css}`}
-              data-tip={`${stitchDictionary[element.stitch].name}: ${
-                stitchDictionary[element.stitch].description
-              } `}
-              data-for="stitch-tooltip"
-            >
-              {element.stitch}
-              <ReactTooltip
-                id="stitch-tooltip"
-                place="top"
-                effect="solid"
-                getContent={(dataTip) => (
-                  <div>
-                    <p>{dataTip}</p>
-                  </div>
-                )}
-              ></ReactTooltip>
+            <div className={`grid ${stitchDictionary[element.stitch].css}`}>
+              <Tooltip
+                stitchName={stitchDictionary[element.stitch].name}
+                stitchDescription={stitchDictionary[element.stitch].description}
+                stitchResources={stitchDictionary[element.stitch].resources}
+              >
+                {element.stitch}
+              </Tooltip>
             </div>
           );
         } else {
