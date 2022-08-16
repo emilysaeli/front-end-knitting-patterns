@@ -14,7 +14,7 @@ const Legend = (props) => {
             <div className="legend-title">{item.name}</div>
           </div>
         );
-      } else if (props.stitchDictionary[stitch] === undefined) {
+      } else {
         return (
           <div key={stitch} className="legend-entry">
             <div className="key-container">

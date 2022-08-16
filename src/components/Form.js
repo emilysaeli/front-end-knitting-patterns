@@ -13,23 +13,39 @@ const Form = (props) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    props.submitPattern({ inputPattern: patternForm });
     setPrevPatternForm(patternForm);
+    if (validatePatternArray(patternForm)) {
+      props.submitPattern({ inputPattern: patternForm });
+    }
     setPatternForm("");
+  };
+
+  const validatePatternArray = (pattern) => {
+    const patternArray = pattern.split(/\r\n|\r|\n/);
+    for (const row of patternArray) {
+      if (row.length > 200) {
+        props.setErrorMessage(
+          "Invalid pattern. Each row must not contain more than 200 characters."
+        );
+        return false;
+      }
+    }
+    return true;
   };
 
   const generateSubmittedPattern = (pattern) => {
     // This function splits up the submitted input by rows
     // and generates JSX
-    const rowsArray = pattern.split(/\r\n|\r|\n/);
+    const patternArray = pattern.split(/\r\n|\r|\n/);
     return (
       <div>
-        {rowsArray.map((row) => (
+        {patternArray.map((row) => (
           <div>{row}</div>
         ))}
       </div>
     );
   };
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -59,10 +75,12 @@ const Form = (props) => {
           </div>
         </div>
       </form>
-      <div className="submitted-pattern">
-        <p>Your pattern:</p>
-        {generateSubmittedPattern(prevPatternForm)}
-      </div>
+      {prevPatternForm && (
+        <div className="submitted-pattern">
+          <p>Your pattern:</p>
+          {generateSubmittedPattern(prevPatternForm)}
+        </div>
+      )}
     </div>
   );
 };
