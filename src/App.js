@@ -81,14 +81,22 @@ const App = () => {
               </ul>
               <li>
                 Example Pattern:{" "}
-                <a href="https://github.com/emilysaeli/front-end-knitting-patterns/blob/main/src/services/patterns/03_diagonal_seed/input_diagonal_seed.txt">
+                <a
+                  href="https://github.com/emilysaeli/front-end-knitting-patterns/blob/main/src/services/patterns/03_diagonal_seed/input_diagonal_seed.txt"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   Diagonal Seed
                 </a>
               </li>
               <li>
                 {" "}
                 Example Pattern:{" "}
-                <a href="https://github.com/emilysaeli/front-end-knitting-patterns/blob/main/src/services/patterns/01_flag_stitch/input_flag_stitch.txt">
+                <a
+                  href="https://github.com/emilysaeli/front-end-knitting-patterns/blob/main/src/services/patterns/01_flag_stitch/input_flag_stitch.txt"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   Flag Stitch
                 </a>
               </li>
