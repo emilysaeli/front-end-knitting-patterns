@@ -61,5 +61,6 @@
 }
 
 .no-stitch {
-    background-color: white;
+    color: grey;
+    background-color: grey;
 }
