@@ -6,6 +6,7 @@ import Chart from "./components/Chart";
 import Legend from "./components/Legend";
 import ErrorMessage from "./components/ErrorMessage";
 import { stitchDictionary } from "./services/stitchDictionary.js";
+import useCollapse from "react-collapsed";
 
 const App = () => {
   const URL = "https://pattern-handler-test-api.herokuapp.com";
@@ -52,10 +53,48 @@ const App = () => {
     return uniqueStitches;
   };
 
+  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
+
   return (
     <div className="App">
       <header className="header">
         <h1>Knitting Patterns Made Easy</h1>
+        <div className="pattern">
+          <button {...getToggleProps()}>
+            {isExpanded ? "Collapse" : "Pattern Information"}
+          </button>
+          <div className="expandable" {...getCollapseProps()}>
+            <ul>
+              <li>Max 500 characters per row</li>
+              <li>Max 500 rows</li>
+              <li>Max 500 stitches per row</li>
+              <li>
+                No more than 200 consecutive stitches. Stitch must include
+                count, ie K5, up to 200
+              </li>
+              <li>Stitches can be:</li>
+              <ul>
+                <li>-CO (Cast-on)</li>
+                <li>-K (Knit) </li>
+                <li>-P (Purl) </li>
+                <li>-BO (Bind-off)</li>
+              </ul>
+              <li>
+                Example Pattern:{" "}
+                <a href="https://github.com/emilysaeli/front-end-knitting-patterns/blob/main/src/services/patterns/03_diagonal_seed/input_diagonal_seed.txt">
+                  Diagonal Seed
+                </a>
+              </li>
+              <li>
+                {" "}
+                Example Pattern:{" "}
+                <a href="https://github.com/emilysaeli/front-end-knitting-patterns/blob/main/src/services/patterns/01_flag_stitch/input_flag_stitch.txt">
+                  Flag Stitch
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </header>
       <section className="form">
         <Form
