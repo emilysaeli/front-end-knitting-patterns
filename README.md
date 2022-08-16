@@ -6,13 +6,17 @@
 - Emily Saeli
 - Grace Park 
 
-
+### Deployed Links:  
+- Front-end: https://kpme-front-end.herokuapp.com   
+- Back-end: https://pattern-handler-test-api.herokuapp.com  
 ### Project set-up
 
 One-time set-up:
 - Install Yarn by following [Yarn installation instructions](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
   
-- Run `yarn install` in the project directory to install required dependencies
+- Run `yarn install` in the project directory to install required dependencies  
+- Run `yarn add react-collapsed` 
+- Run `yarn add react-tooltip` 
 
 To start a server & run the app in development mode:
 - Run  `yarn start` in the project directory 
