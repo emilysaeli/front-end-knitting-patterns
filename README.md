@@ -9,6 +9,10 @@
 ### Deployed Links:  
 - Front-end: https://kpme-front-end.herokuapp.com   
 - Back-end: https://pattern-handler-test-api.herokuapp.com  
+
+### Project Description:  
+A web application designed to help beginner knitters interpret written patterns as visual matrices.
+
 ### Project set-up
 
 One-time set-up:
