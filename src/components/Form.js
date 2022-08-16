@@ -32,7 +32,6 @@ const Form = (props) => {
   };
   return (
     <div>
-      <h2>Form</h2>
       <form onSubmit={onSubmit}>
         <div className="input-container">
           <label hidden htmlFor="pattern-form">
