@@ -6,7 +6,9 @@
 - Emily Saeli
 - Grace Park 
 
-
+### Deployed Links:  
+- Front-end: https://kpme-front-end.herokuapp.com   
+- Back-end: https://pattern-handler-test-api.herokuapp.com  
 ### Project set-up
 
 One-time set-up:
