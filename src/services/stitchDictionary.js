@@ -43,4 +43,11 @@ export const stitchDictionary = {
     symbol: "BO",
     css: "bind-off",
   },
+  X: {
+    name: "No stitch",
+    description: "No stitchs",
+    resources: "",
+    symbol: "X",
+    css: "no-stitch",
+  },
 };

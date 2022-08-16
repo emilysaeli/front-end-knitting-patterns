@@ -75,7 +75,9 @@ const App = () => {
             )}
           </section>
           <section>
-            {chartData.length > 0 && <Chart data={chartData} />}
+            {chartData.length > 0 && (
+              <Chart data={chartData} setErrorMessage={setErrorMessage} />
+            )}
           </section>
         </div>
       ) : (

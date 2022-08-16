@@ -22,6 +22,12 @@ const Form = (props) => {
 
   const validatePatternArray = (pattern) => {
     const patternArray = pattern.split(/\r\n|\r|\n/);
+    if (patternArray.length > 500) {
+      props.setErrorMessage(
+        "Invalid pattern. Pattern must not contain more than 500 rows."
+      );
+      return false;
+    }
     for (const row of patternArray) {
       if (row.length > 200) {
         props.setErrorMessage(

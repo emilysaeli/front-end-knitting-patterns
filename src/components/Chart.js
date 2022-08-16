@@ -4,6 +4,7 @@ import Tooltip from "./Tooltip";
 import { createHeaderArray } from "../services/data_validation";
 import { handleDownloadImage } from "../services/download_image";
 import { stitchDictionary } from "../services/stitchDictionary";
+import { validate_matrix } from "../services/data_validation";
 
 const Chart = (props) => {
   const printRef = useRef(); // used in handleDownloadImage function
@@ -55,19 +56,26 @@ const Chart = (props) => {
       return <div className="chart-row">{chartRow}</div>;
     });
 
-  const chartData = generateChartData(props.data);
-
-  return (
-    <div>
-      <h2>Chart</h2>
-      <div className="chart" ref={printRef}>
-        {chartJSX(chartData)}
+  if (!validate_matrix(props.data)) {
+    props.setErrorMessage(
+      "Invalid pattern. Rows do not have the same number of stitches"
+    );
+    return <div></div>;
+  } else {
+    props.setErrorMessage("");
+    const chartData = generateChartData(props.data);
+    return (
+      <div>
+        <h2>Chart</h2>
+        <div className="chart" ref={printRef}>
+          {chartJSX(chartData)}
+        </div>
+        <button onClick={() => handleDownloadImage(printRef)} id="save-btn">
+          Save Image
+        </button>
       </div>
-      <button onClick={() => handleDownloadImage(printRef)} id="save-btn">
-        Save Image
-      </button>
-    </div>
-  );
+    );
+  }
 };
 
 export default Chart;
