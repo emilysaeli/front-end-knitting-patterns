@@ -46,3 +46,6 @@ NB: Copy only the pattern, not including the Cast-on instructions. The cast-on w
 -Diagonal Seed: https://github.com/emilysaeli/front-end-knitting-patterns/blob/main/src/services/patterns/03_diagonal_seed/input_diagonal_seed.txt  
 -Flag Stitch: https://github.com/emilysaeli/front-end-knitting-patterns/blob/main/src/services/patterns/01_flag_stitch/input_flag_stitch.txt  
 
+### Back-end Information  
+https://github.com/emilysaeli/back-end-knitting-patterns/blob/main/README.md 
+
